@@ -16,7 +16,7 @@ const App = () => {
       const effectMessage = JSON.parse(state.data);
 
       if (!effectMessage.roomId) {
-        const effectClientId = process.env.REACT_APP_ENV === 'local'
+        const effectClientId = process.env.NODE_ENV !== 'production'
           ? btoa((new URLSearchParams(window.location.search)).get('host'))
           : effectMessage.clientId;
 
