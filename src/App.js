@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Header from './components/Header';
 import History from './components/History';
 import Input from './components/Input';
@@ -7,12 +7,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.scss';
 
 const App = () => {
+  const anchor = useRef();
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [clientId, setClientId] = useState('');
 
   useEffect(() => {
-    connect((state) => {
+    const scroll = () => {
+      anchor.current.scrollTop = anchor.current.scrollHeight;
+    };
+
+    const callback = (state) => {
       const effectMessage = JSON.parse(state.data);
 
       if (!effectMessage.roomId) {
@@ -33,7 +38,11 @@ const App = () => {
       setMessages((prevState) => {
         return [...prevState, effectMessage];
       });
-    });
+
+      scroll();
+    };
+
+    connect(callback);
   }, []);
 
   const handleSubmit = (event) => {
@@ -41,6 +50,7 @@ const App = () => {
       send(message);
       setMessage('');
     }
+
     event.preventDefault();
   };
 
@@ -68,6 +78,7 @@ const App = () => {
             </div>
             <div
               id="body"
+              ref={anchor}
               className="overflow-auto"
             >
               <History
