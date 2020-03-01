@@ -16,9 +16,12 @@ const App = () => {
       const effectMessage = JSON.parse(state.data);
 
       if (!effectMessage.roomId) {
-        const effectClientId = process.env.NODE_ENV !== 'production'
-          ? btoa((new URLSearchParams(window.location.search)).get('host'))
-          : effectMessage.clientId;
+        let effectClientId = effectMessage.clientId;
+
+        if (process.env.NODE_ENV !== 'production') {
+          const query = new URLSearchParams(window.location.search);
+          effectClientId = btoa(`${query.get('host')}: ${query.get('platform')}`);
+        }
 
         setClientId(effectClientId);
 
