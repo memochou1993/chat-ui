@@ -12,10 +12,10 @@ const History = (props) => {
             return (
               <div
                 key={index}
-                className="row"
+                className="d-flex"
               >
                 <div
-                  className="col-md-6 offset-md-3 my-3 px-0"
+                  className="col my-3 px-0"
                 >
                   <div
                     className="message-center"
@@ -31,16 +31,20 @@ const History = (props) => {
             return (
               <div
                 key={index}
-                className="row"
+                className="d-flex"
               >
                 <div
-                  className="col-md-6 offset-md-6 my-3 px-0"
+                  className="col-10 offset-2 col-sm-6 offset-sm-6 col-md-8 offset-md-4 my-3 px-0"
                 >
-                  <span
-                    className="message-right"
+                  <div
+                    className="d-flex message message-right"
                   >
-                    {message.body}
-                  </span>
+                    <div
+                      className="col px-2"
+                    >
+                      {message.body}
+                    </div>
+                  </div>
                 </div>
               </div>
             );
@@ -49,16 +53,20 @@ const History = (props) => {
           return (
             <div
               key={index}
-              className="row"
+              className="d-flex"
             >
               <div
-                className="col-md-6 my-3 px-0"
+                className="col-10 col-sm-6 col-md-8 my-3 px-0"
               >
-                <span
-                  className="message-left"
+                <div
+                  className="d-flex message message-left"
                 >
-                  {message.body}
-                </span>
+                  <div
+                    className="col px-2"
+                  >
+                    {message.body}
+                  </div>
+                </div>
               </div>
             </div>
           );

@@ -50,14 +50,13 @@ const App = () => {
       className="App h-100"
     >
       <div
-        className="container-fluid h-100 bg-dark"
+        className="container-fluid h-100 bg-secondary"
       >
         <div
           className="d-flex h-100"
         >
           <div
-            id="container"
-            className="col-md-6 offset-md-3 col-lg-4 offset-lg-4 align-self-center bg-light"
+            className="col-md-6 offset-md-3 col-lg-4 offset-lg-4 align-self-center h-100 px-0 bg-light"
           >
             <div
               id="header"
