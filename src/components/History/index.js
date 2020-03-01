@@ -15,10 +15,10 @@ const History = (props) => {
                 className="row"
               >
                 <div
-                  className="col-md-6 offset-md-3"
+                  className="col-md-6 offset-md-3 my-3 px-0"
                 >
                   <div
-                    className="alert alert-warning text-center my-3 py-1"
+                    className="message-center"
                   >
                     {message.body}
                   </div>
@@ -34,13 +34,13 @@ const History = (props) => {
                 className="row"
               >
                 <div
-                  className="col-md-6 offset-md-6"
+                  className="col-md-6 offset-md-6 my-3 px-0"
                 >
-                  <div
-                    className="alert alert-info my-3"
+                  <span
+                    className="message-right"
                   >
                     {message.body}
-                  </div>
+                  </span>
                 </div>
               </div>
             );
@@ -52,13 +52,13 @@ const History = (props) => {
               className="row"
             >
               <div
-                className="col-md-6"
+                className="col-md-6 my-3 px-0"
               >
-                <div
-                  className="alert alert-success my-3"
+                <span
+                  className="message-left"
                 >
                   {message.body}
-                </div>
+                </span>
               </div>
             </div>
           );

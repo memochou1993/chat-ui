@@ -1,8 +1,35 @@
 .History {
+  height: 100%;
   padding: 10px 50px;
 
-  .alert {
-    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.25);
+  .message-center {
+    background-color: #fff3cd;
+    border: 1px #ffeeba solid;
+    border-radius: 4px;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+    color: #856404;
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+  .message-left {
+    background-color: #d4edda;
+    border: 1px #c3e6cb solid;
+    border-radius: 4px;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+    color: #155724;
+    float: left;
+    padding: 8px 12px;
+  }
+
+  .message-right {
+    background-color: #d1ecf1;
+    border: 1px #bee5eb solid;
+    border-radius: 4px;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+    color: #0c5460;
+    float: right;
+    padding: 8px 12px;
   }
 }
 

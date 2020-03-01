@@ -46,32 +46,43 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div
+      className="App h-100"
+    >
       <div
-        className="container-fulid bg-light"
+        className="container-fluid h-100 bg-dark"
       >
         <div
-          id="header"
+          className="d-flex h-100"
         >
-          <Header />
-        </div>
-        <div
-          id="body"
-          className="overflow-auto"
-        >
-          <History
-            clientId={clientId}
-            messages={messages}
-          />
-        </div>
-        <div
-          id="footer"
-        >
-          <Input
-            submit={handleSubmit}
-            value={message}
-            onChange={handleChange}
-          />
+          <div
+            id="container"
+            className="col-md-6 offset-md-3 col-lg-4 offset-lg-4 align-self-center bg-light"
+          >
+            <div
+              id="header"
+            >
+              <Header />
+            </div>
+            <div
+              id="body"
+              className="overflow-auto"
+            >
+              <History
+                clientId={clientId}
+                messages={messages}
+              />
+            </div>
+            <div
+              id="footer"
+            >
+              <Input
+                submit={handleSubmit}
+                value={message}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
