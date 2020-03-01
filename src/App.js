@@ -56,7 +56,7 @@ const App = () => {
           className="d-flex h-100"
         >
           <div
-            className="col-md-6 offset-md-3 col-lg-4 offset-lg-4 align-self-center h-100 px-0 bg-light"
+            className="col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 align-self-center h-100 px-0 bg-light"
           >
             <div
               id="header"
