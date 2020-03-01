@@ -15,7 +15,7 @@ const History = (props) => {
                 className="d-flex"
               >
                 <div
-                  className="col my-3 px-0"
+                  className="col my-2 px-0"
                 >
                   <div
                     className="message-center"
@@ -34,7 +34,7 @@ const History = (props) => {
                 className="d-flex"
               >
                 <div
-                  className="col-10 offset-2 col-sm-6 offset-sm-6 col-md-8 offset-md-4 my-3 px-0"
+                  className="col-10 offset-2 col-sm-6 offset-sm-6 col-md-8 offset-md-4 my-2 px-0"
                 >
                   <div
                     className="d-flex message message-right"
@@ -56,7 +56,7 @@ const History = (props) => {
               className="d-flex"
             >
               <div
-                className="col-10 col-sm-6 col-md-8 my-3 px-0"
+                className="col-10 col-sm-6 col-md-8 my-2 px-0"
               >
                 <div
                   className="d-flex message message-left"
