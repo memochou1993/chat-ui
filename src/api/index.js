@@ -1,4 +1,4 @@
-const socket = new WebSocket(`ws://localhost:8082${window.location.search}`);
+const socket = new WebSocket(`ws://${process.env.REACT_APP_API_URL}${window.location.search}`);
 
 const connect = (callback) => {
   console.log('Attempting Connection...');
