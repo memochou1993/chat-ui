@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Header from './components/Header';
 import History from './components/History';
 import Input from './components/Input';
-import { connect, send } from './api';
+import { connect, send } from './plugins/websocket';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.scss';
 
