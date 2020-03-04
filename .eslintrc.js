@@ -22,7 +22,7 @@ module.exports = {
     'react',
   ],
   rules: {
-    'arrow-body-style': ['error', 'always'],
+    'arrow-body-style': ['error', 'as-needed'],
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
     'react/destructuring-assignment': [0],
     'react/prop-types': [0],
