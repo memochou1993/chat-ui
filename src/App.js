@@ -8,54 +8,40 @@ import './style.scss';
 
 const App = () => {
   const anchor = useRef();
-  const [message, setMessage] = useState('');
+  const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
-  const [clientId, setClientId] = useState('');
 
   useEffect(() => {
-    const scroll = () => {
-      anchor.current.scrollTop = anchor.current.scrollHeight;
-    };
-
     const callback = (state) => {
-      const effectMessage = JSON.parse(state.data);
+      const message = JSON.parse(state.data);
 
-      if (!effectMessage.roomId) {
-        let effectClientId = effectMessage.clientId;
-
-        if (process.env.NODE_ENV !== 'production') {
-          const query = new URLSearchParams(window.location.search);
-          effectClientId = btoa(`${query.get('host')}: ${query.get('platform')}`);
-        }
-
-        setClientId(effectClientId);
-
-        if (effectClientId === effectMessage.clientId) {
-          return;
-        }
+      if (!localStorage.getItem('clientId')) {
+        localStorage.setItem('clientId', message.clientId);
       }
 
-      setMessages((prevState) => {
-        return [...prevState, effectMessage];
-      });
+      if (!message.roomId && message.clientId === localStorage.getItem('clientId')) {
+        return;
+      }
 
-      scroll();
+      setMessages((prev) => [...prev, message]);
+
+      anchor.current.scrollTop = anchor.current.scrollHeight;
     };
 
     connect(callback);
   }, []);
 
   const handleSubmit = (event) => {
-    if (message) {
-      send(message);
-      setMessage('');
-    }
-
     event.preventDefault();
+
+    if (input) {
+      send(input);
+      setInput('');
+    }
   };
 
   const handleChange = (event) => {
-    setMessage(event.target.value);
+    setInput(event.target.value);
   };
 
   return (
@@ -82,7 +68,6 @@ const App = () => {
               className="overflow-auto"
             >
               <History
-                clientId={clientId}
                 messages={messages}
               />
             </div>
@@ -91,7 +76,7 @@ const App = () => {
             >
               <Input
                 submit={handleSubmit}
-                value={message}
+                value={input}
                 onChange={handleChange}
               />
             </div>

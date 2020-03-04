@@ -1,18 +1,16 @@
 import React from 'react';
 import './style.scss';
 
-const Header = () => {
-  return (
+const Header = () => (
+  <div
+    className="Header"
+  >
     <div
-      className="Header"
+      id="title"
     >
-      <div
-        id="title"
-      >
-        Chat App
-      </div>
+      Chat App
     </div>
-  );
-};
+  </div>
+);
 
 export default Header;

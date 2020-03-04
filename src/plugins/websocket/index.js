@@ -1,23 +1,20 @@
-const socket = new WebSocket(`${process.env.REACT_APP_API_URL}${window.location.search}`);
+const socket = new WebSocket(`${process.env.REACT_APP_API_URL}?clientId=${localStorage.getItem('clientId') || ''}`);
 
 const connect = (callback) => {
-  console.log('Attempting Connection...');
-
   socket.onopen = (event) => {
-    console.log('Connection Opened: ', event);
+    console.warn('Connection Opened: ', event);
   };
 
   socket.onmessage = (message) => {
-    console.log(message);
     callback(message);
   };
 
   socket.onclose = (event) => {
-    console.log('Connection Closed: ', event);
+    console.warn('Connection Closed: ', event);
   };
 
   socket.onerror = (error) => {
-    console.log('Socket Error: ', error);
+    console.error(error);
   };
 };
 
