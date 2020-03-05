@@ -4,7 +4,7 @@ import History from './components/History';
 import Input from './components/Input';
 import Socket from './plugins/websocket';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './style.scss';
+import './style.sass';
 
 const socket = Socket();
 
