@@ -2,9 +2,11 @@ import React, { useEffect, useState, useRef } from 'react';
 import Header from './components/Header';
 import History from './components/History';
 import Input from './components/Input';
-import { connect, send } from './plugins/websocket';
+import Socket from './plugins/websocket';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.scss';
+
+const socket = Socket();
 
 const App = () => {
   const anchor = useRef();
@@ -28,14 +30,14 @@ const App = () => {
       anchor.current.scrollTop = anchor.current.scrollHeight;
     };
 
-    connect(callback);
+    socket.connect(callback);
   }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (input) {
-      send(input);
+      socket.send(input);
       setInput('');
     }
   };
