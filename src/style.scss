@@ -1,8 +1,12 @@
 html,
 body,
 #root {
-  font-size: 16px;
   height: 100%;
+}
+
+body {
+  font-family: "Microsoft JhengHei";
+  font-size: 16px;
 }
 
 .container-fluid {
