@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  app:
+    container_name: chat-client
+    build: .
+    restart: always
+    ports:
+      - "${APP_PORT}:80"
