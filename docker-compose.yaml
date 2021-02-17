@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    container_name: chat-client
+    container_name: chat-ui
     build: .
     restart: always
     ports:
